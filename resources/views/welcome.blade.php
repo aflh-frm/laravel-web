@@ -64,7 +64,7 @@
                             <span>
                                 Read the
                                 <a href="https://laravel.com/docs" target="_blank" class="inline-flex items-center space-x-1 font-medium underline underline-offset-4 text-[#f53003] dark:text-[#FF4433] ml-1">
-                                    <span>Documentation</span>
+                                    <span>Hidup Jokowi</span>
                                     <svg
                                         width="10"
                                         height="11"
@@ -89,9 +89,9 @@
                                 </span>
                             </span>
                             <span>
-                                Watch video tutorials at
+                                Watch video tutorials at Youtube
                                 <a href="https://laracasts.com" target="_blank" class="inline-flex items-center space-x-1 font-medium underline underline-offset-4 text-[#f53003] dark:text-[#FF4433] ml-1">
-                                    <span>Laracasts</span>
+                                    <span>Cara menjadi presiden (orang dalam)</span>
                                     <svg
                                         width="10"
                                         height="11"
