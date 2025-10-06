@@ -89,11 +89,11 @@
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Email</label>
-                                <input type="text" name="email" class="form-control" value="{{old('email')}}>
+                                <input type="text" name="email" class="form-control" value="{{old('email')}}">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Pertanyaan</label>
-                                <textarea class="form-control" name="pertanyaan" rows="4" value="{{old('pertanyaan')}}></textarea>
+                                <textarea class="form-control" name="pertanyaan" rows="4" value="{{old('pertanyaan')}}"></textarea>
                             </div>
                                 @if ($errors->any())
                                     <div class="alert alert-danger">
