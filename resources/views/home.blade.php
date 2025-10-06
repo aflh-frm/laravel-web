@@ -72,6 +72,9 @@
                         <h5 class="card-title">Latihan Login</h5>
                         <p class="card-text">Dibangun dengan Bootstrap 5 untuk memastikan tampilan yang bersih dan
                             responsif di semua perangkat.</p>
+                        <a href="D:\Aflah_2TID\laragon-6.0-minimal\www\laravel-web\resources\views\login-from.blade.php">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </a>
                     </div>
                 </div>
             </div>

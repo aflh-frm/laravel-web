@@ -9,9 +9,36 @@ class AuthController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        //
+    public function index() {
+
+        return view('login-form');
+
+    }
+
+    public function login() {
+            $request->validate([
+            'username' => 'required',
+            'password' => [
+                'required',
+                'min:3',
+                'regex:/[A-Z]/', // harus mengandung huruf kapital
+            ],
+        ], [
+            'username.required' => 'Username wajib diisi.',
+            'password.required' => 'Password wajib diisi.',
+            'password.min' => 'Password minimal 3 karakter.',
+            'password.regex' => 'Password harus mengandung huruf kapital.',
+        ]);
+
+        // Cek kecocokan sederhana (contoh)
+        $username = $request->input('username');
+        $password = $request->input('password');
+
+        if ($username === 'Admin' && $password === 'Abc123') {
+            return redirect('/dashboard')->with('success', 'Login berhasil! Selamat datang, ' . $username);
+        } else {
+            return back()->with('error', 'Username atau password salah.');
+        }
     }
 
     /**
