@@ -95,7 +95,7 @@
 						<span class="sidebar-text">Dashboard</span>
 					</a>
 				</li>
-				<li class="nav-item">
+				{{-- <li class="nav-item">
 					<a href="https://demo.themesberg.com/volt-pro/pages/kanban.html" target="_blank"
 						class="nav-link d-flex justify-content-between">
 						<span>
@@ -113,8 +113,8 @@
 							<span class="badge badge-sm bg-secondary ms-1 text-gray-800">Pro</span>
 						</span>
 					</a>
-				</li>
-				<li class="nav-item ">
+				</li> --}}
+				{{-- <li class="nav-item ">
 					<a href="../../pages/transactions.html" class="nav-link">
 						<span class="sidebar-icon">
 							<svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
@@ -127,8 +127,8 @@
 						</span>
 						<span class="sidebar-text">Transactions</span>
 					</a>
-				</li>
-				<li class="nav-item ">
+				</li> --}}
+				{{-- <li class="nav-item ">
 					<a href="../../pages/settings.html" class="nav-link">
 						<span class="sidebar-icon">
 							<svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
@@ -140,8 +140,8 @@
 						</span>
 						<span class="sidebar-text">Settings</span>
 					</a>
-				</li>
-				<li class="nav-item">
+				</li> --}}
+				{{-- <li class="nav-item">
 					<a href="https://demo.themesberg.com/volt-pro/pages/calendar.html" target="_blank"
 						class="nav-link d-flex justify-content-between">
 						<span>
@@ -159,8 +159,8 @@
 							<span class="badge badge-sm bg-secondary ms-1 text-gray-800">Pro</span>
 						</span>
 					</a>
-				</li>
-				<li class="nav-item">
+				</li> --}}
+				{{-- <li class="nav-item">
 					<a href="https://demo.themesberg.com/volt-pro/pages/map.html" target="_blank"
 						class="nav-link d-flex justify-content-between">
 						<span>
@@ -178,7 +178,7 @@
 							<span class="badge badge-sm bg-secondary ms-1 text-gray-800">Pro</span>
 						</span>
 					</a>
-				</li>
+				</li> --}}
 				<li class="nav-item">
 					<span class="nav-link  collapsed  d-flex justify-content-between align-items-center"
 						data-bs-toggle="collapse" data-bs-target="#submenu-app">
@@ -212,7 +212,7 @@
 						</ul>
 					</div>
 				</li>
-				<li class="nav-item">
+				{{-- <li class="nav-item">
 					<span class="nav-link  collapsed  d-flex justify-content-between align-items-center"
 						data-bs-toggle="collapse" data-bs-target="#submenu-pages">
 						<span>
@@ -275,8 +275,8 @@
 							</li>
 						</ul>
 					</div>
-				</li>
-				<li class="nav-item">
+				</li> --}}
+				{{-- <li class="nav-item">
 					<span class="nav-link  collapsed  d-flex justify-content-between align-items-center"
 						data-bs-toggle="collapse" data-bs-target="#submenu-components">
 						<span>
@@ -335,7 +335,7 @@
 							</li>
 						</ul>
 					</div>
-				</li>
+				</li> --}}
 				<li role="separator" class="dropdown-divider mt-4 mb-3 border-gray-700"></li>
 				<li class="nav-item">
 					<a href="https://themesberg.com/docs/volt-bootstrap-5-dashboard/getting-started/quick-start/"
@@ -352,14 +352,14 @@
 								class="badge badge-sm bg-secondary ms-1 text-gray-800">v1.4</span></span>
 					</a>
 				</li>
-				<li class="nav-item">
+				{{-- <li class="nav-item">
 					<a href="https://themesberg.com" target="_blank" class="nav-link d-flex align-items-center">
 						<span class="sidebar-icon">
 							<img src="../../assets/img/themesberg.svg" height="20" width="28" alt="Themesberg Logo">
 						</span>
 						<span class="sidebar-text">Themesberg</span>
 					</a>
-				</li>
+				</li> --}}
 				<li class="nav-item">
 					<a href="../../pages/upgrade-to-pro.html"
 						class="btn btn-secondary d-flex align-items-center justify-content-center btn-upgrade-pro">

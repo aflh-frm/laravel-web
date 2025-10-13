@@ -15,13 +15,13 @@ class AuthController extends Controller
 
     }
 
-    public function login() {
+    public function login(Request $request) {
             $request->validate([
             'username' => 'required',
             'password' => [
                 'required',
                 'min:3',
-                'regex:/[A-Z]/', // harus mengandung huruf kapital
+                'regex:/[A-Z]/',
             ],
         ], [
             'username.required' => 'Username wajib diisi.',
@@ -30,12 +30,11 @@ class AuthController extends Controller
             'password.regex' => 'Password harus mengandung huruf kapital.',
         ]);
 
-        // Cek kecocokan sederhana (contoh)
         $username = $request->input('username');
         $password = $request->input('password');
 
         if ($username === 'Admin' && $password === 'Abc123') {
-            return redirect('/dashboard')->with('success', 'Login berhasil! Selamat datang, ' . $username);
+            return view('/berhasil-login');
         } else {
             return back()->with('error', 'Username atau password salah.');
         }

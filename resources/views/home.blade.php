@@ -78,9 +78,8 @@
                 <div class="card h-100 shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title">Latihan Login</h5>
-                        <p class="card-text">Dibangun dengan Bootstrap 5 untuk memastikan tampilan yang bersih dan
-                            responsif di semua perangkat.</p>
-                        <a href="D:\Aflah_2TID\laragon-6.0-minimal\www\laravel-web\resources\views\login-from.blade.php">
+                        <br>
+                        <a href="{{ url('/auth') }}">
                             <button type="submit" class="btn btn-primary">Login</button>
                         </a>
                     </div>
@@ -136,8 +135,10 @@
                 <div class="card h-100 shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title">Tugas Classroom</h5>
-                        <p class="card-text">Kode yang rapi dan terstruktur, memudahkan Anda untuk mengubah konten
-                            sesuai kebutuhan proyek.</p>
+                        <br>
+                        <a href="{{ url('/pegawai') }}">
+                            <button type="submit" class="btn btn-primary">lihat tugas</button>
+                        </a>
                     </div>
                 </div>
             </div>
