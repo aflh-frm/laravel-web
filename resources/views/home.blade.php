@@ -9,6 +9,10 @@
     <title>Halaman Utama - Selamat Datang!</title>
 
     {{-- Bootstrap 5 CSS dari CDN untuk styling --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/custom-style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Playwrite+US+Modern:wght@100..400&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
@@ -49,22 +53,26 @@
         <div class="p-5 mb-4 bg-light rounded-3 text-center">
             <section class="hero-section">
                 <div>
+                    <img src="{{ asset('assets/images/test_logo.jpg') }}"
+                         alt="download">
                     <h1 class="display-6 mb-2">{{ $username }}</h1>
                     <p class="lead mb-0">{{ $last_login }}</p>
                 </div>
             </section>
             <div class="container-fluid py-5">
-                <h1 class="display-5 fw-bold">Selamat Datang di Website Kami! 🚀</h1>
-                <p class="fs-4 col-md-8 mx-auto">Ini adalah halaman utama yang dibangun menggunakan Laravel Blade.
-                    Template ini responsif, modern, dan siap untuk Anda kembangkan lebih lanjut.</p>
-                <a href="#" class="btn btn-primary btn-lg mt-3">Pelajari Lebih Lanjut</a>
+                <div class="font-custom">
+                    <h1 class="display-5 fw-bold">Selamat Datang di Website Kami! 🚀</h1>
+                    <p class="fs-4 col-md-8 mx-auto">Ini adalah halaman utama yang dibangun
+                        menggunakan Laravel Blade. Template ini responsif, modern,
+                        dan siap untuk Anda kembangkan lebih lanjut.</p>
+                    <a href="#" class="btn btn-primary btn-lg mt-3">Pelajari Lebih Lanjut</a>
+                </div>
+                </div>
             </div>
-        </div>
 
         {{-- Features Section --}}
         <div class="row text-center">
             <h2 class="mb-4">Fitur Unggulan Kami</h2>
-
             {{-- Fitur 1 --}}
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100 shadow-sm">
@@ -98,6 +106,7 @@
                                 <label class="form-label">Pertanyaan</label>
                                 <textarea class="form-control" name="pertanyaan" rows="4" value="{{old('pertanyaan')}}"></textarea>
                             </div>
+
                                 @if ($errors->any())
                                     <div class="alert alert-danger">
                                         <ul>
@@ -107,6 +116,13 @@
                                         </ul>
                                     </div>
                                 @endif
+
+                                @if (session('info'))
+                                    <div class="alert alert-info">
+                                        {!! session('info') !!}
+                                    </div>
+                                @endif
+
                             <a href="D:\Aflah_2TID\laragon-6.0-minimal\www\laravel-web\resources\views\home-question-respon.blade.php">
                                 <button type="submit" class="btn btn-primary">Kirim Pertanyaan</button>
                             </a>

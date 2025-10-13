@@ -5,7 +5,7 @@ use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\AuthController;
-
+use App\Http\Controllers\DashboardController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -33,7 +33,7 @@ Route::get('/about', function () {
     return view('halaman-about');
 });
 
-Route::get('/home', [HomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::post('question/store', [QuestionController::class, 'store'])
 ->name('question.store');
@@ -42,3 +42,5 @@ Route::get('/home-questions-respons', [QuestionController::class, 'store']);
 
 Route::get('/auth', [AuthController::class, 'index']);
 Route::post('/auth/login', [AuthController::class, 'login']);
+
+Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
