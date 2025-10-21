@@ -9,8 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up()
-    {
+    public function up() {
         Schema::create('pelanggan', function (Blueprint $table) {
             $table->increments('pelanggan_id');
             $table->string('first_name', 100);
