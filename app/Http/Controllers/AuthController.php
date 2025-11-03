@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\User;
+
+use Illuminate\Support\Facades\Hash;
+
 class AuthController extends Controller
 {
     /**
@@ -15,28 +19,30 @@ class AuthController extends Controller
 
     }
 
-    public function login(Request $request) {
-            $request->validate([
-            'username' => 'required',
+    public function login(Request $request){
+        // Validasi input email dan password
+        $request->validate([
+            'email' => 'required|email',
             'password' => [
                 'required',
                 'min:3',
                 'regex:/[A-Z]/',
             ],
         ], [
-            'username.required' => 'Username wajib diisi.',
+            'email.required' => 'Email wajib diisi.',
+            'email.email' => 'Format email tidak valid.',
             'password.required' => 'Password wajib diisi.',
             'password.min' => 'Password minimal 3 karakter.',
             'password.regex' => 'Password harus mengandung huruf kapital.',
         ]);
 
-        $username = $request->input('username');
-        $password = $request->input('password');
+        $user = User::where('email', $request->email)->first();
 
-        if ($username === 'Admin' && $password === 'Abc123') {
-            return view('/berhasil-login');
+        if ($user && Hash::check($request->password, $user->password)) {
+            session(['user_id' => $user->id, 'user_name' => $user->name]);
+            return redirect()->route('dashboard');
         } else {
-            return back()->with('error', 'Username atau password salah.');
+            return back()->with('error', 'Email atau password salah.');
         }
     }
 
