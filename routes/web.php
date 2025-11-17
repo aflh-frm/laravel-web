@@ -52,7 +52,9 @@ Route::post('question/store', [QuestionController::class, 'store'])
 Route::get('/home-questions-respons', [QuestionController::class, 'store']);
 
 Route::get('/auth', [AuthController::class, 'index']);
-Route::post('/auth/login', [AuthController::class, 'login']);
+
+Route::post('/auth/login', 
+[AuthController::class, 'login']);
 
 Route::get('/pegawai', [PegawaiController::class, 'index']);
 
@@ -61,4 +63,3 @@ Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard'
 Route::resource('pelanggan', PelangganController::class);
 
 Route::resource('user', UserController::class);
-
