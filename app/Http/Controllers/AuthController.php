@@ -8,11 +8,8 @@ use App\Models\User;
 
 use Illuminate\Support\Facades\Hash;
 
-class AuthController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     */
+class AuthController extends Controller {
+
     public function index() {
 
         return view('login-form');
