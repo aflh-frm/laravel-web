@@ -2,92 +2,41 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-use Illuminate\Support\Facades\Hash;
-
-class AuthController extends Controller {
-
-    public function index() {
-
-        return view('login-form');
-
+class AuthController extends Controller
+{
+    public function index()
+    {
+        return view('auth.login');
     }
 
-    public function login(Request $request){
-        // Validasi input email dan password
-        $request->validate([
+    public function login(Request $request)
+    {
+        $input = $request->validate([
             'email' => 'required|email',
-            'password' => [
-                'required',
-                'min:3',
-                'regex:/[A-Z]/',
-            ],
-        ], [
-            'email.required' => 'Email wajib diisi.',
-            'email.email' => 'Format email tidak valid.',
-            'password.required' => 'Password wajib diisi.',
-            'password.min' => 'Password minimal 3 karakter.',
-            'password.regex' => 'Password harus mengandung huruf kapital.',
+            'password' => 'required',
         ]);
 
-        $user = User::where('email', $request->email)->first();
-
-        if ($user && Hash::check($request->password, $user->password)) {
-            session(['user_id' => $user->id, 'user_name' => $user->name]);
-            return redirect()->route('dashboard');
-        } else {
-            return back()->with('error', 'Email atau password salah.');
+        if (Auth::attempt($input)) {
+            $request->session()->regenerate();
+            return redirect()->intended('/dashboard'); // Arahkan User Biasa
         }
+
+        // Jika Login Gagal
+        return back()->withErrors([
+            'email' => 'Email atau password salah.',
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    // Proses Logout
+    public function logout(Request $request)
     {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/');
     }
 }
