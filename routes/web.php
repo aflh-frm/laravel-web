@@ -64,8 +64,6 @@ Route::resource('pelanggan', PelangganController::class);
 
 Route::resource('user', UserController::class);
 
-<<<<<<< HEAD
-=======
 Route::post('/save','MultipleuploadsController@store')->name('uploads.store');
 
 Route::get('/multipleuploads', 'MultipleuploadsController@index')->name('uploads');
@@ -105,4 +103,4 @@ Route::middleware('auth')->group(function () {
         Route::resource('pelanggan', PelangganController::class);
     });
 });
->>>>>>> parent of 719196a (Revert "Pertemuan 13")
+
