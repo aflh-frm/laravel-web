@@ -10,6 +10,7 @@ use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\MatakuliahController;
 use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MultipleuploadsController;
 
 
 Route::get('/', function () {
@@ -67,6 +68,8 @@ Route::resource('user', UserController::class);
 Route::post('/save','MultipleuploadsController@store')->name('uploads.store');
 
 Route::get('/multipleuploads', 'MultipleuploadsController@index')->name('uploads');
+
+Route::get('/multipleuploads', [MultipleuploadsController::class, 'index'])->name('uploads');
 
 
 
